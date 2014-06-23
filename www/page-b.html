@@ -8,25 +8,12 @@
 <script type="text/javascript" src="js/swipe-page.js"></script>
 <script type="text/javascript" src="js/camera.js"></script>
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <link rel="stylesheet" href="css/libs/jquery.mobile-1.4.2.min.css" />
 <link rel="stylesheet" href="css/style.css" />
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />	
 	<script>
-	
-    // Wait for device API libraries to load
-    //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        // Now safe to use device APIs
-    }
-
 
 		$(function() {
 			$( "[data-role='navbar']" ).navbar();
@@ -51,7 +38,15 @@
 		});
 	</script>
 </head>
-<body onload="onLoad()">
+<body>
+        <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+	
     <div data-role="header" data-position="fixed" data-theme="a">
         <!--h1 style="text-align:left; margin-left:10px;">Info</h1-->
 		<div class="logo">
@@ -98,7 +93,9 @@
 		</div><!-- /content -->
 
 
-
+        <script type="text/javascript">
+            app.initialize();
+        </script>
 </body>
 
 </html>
