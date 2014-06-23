@@ -61,8 +61,8 @@
 					<h2>Upload Deal:</h2>
 				</div>
 				<ul data-role="listview" data-inset="true" data-icon="false">
-					<li><a href="#" ontouchstart="take_pic();">Snap a Photo</a></li>
-					<li><a href="#" ontouchstart="album_pic();">Choose from Gallery</a></li>
+					<li><a href="#" onclick="take_pic();">Snap a Photo</a></li>
+					<li><a href="#" onclick="album_pic();">Choose from Gallery</a></li>
 				</ul>
 			</div>
 			<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext ui-btn-inline">Search</a>
@@ -77,7 +77,7 @@
 		</div><!-- /navbar -->
     </div><!-- /header -->
 
-<div data-role="page" data-title="Deals" id="page1" data-url="index" data-next="page-b">
+<div data-role="page" data-title="Deals" id="page1" data-dom-cache="true" data-url="index" data-next="page-b">
 
 <div data-role="main" class="ui-content">
 <h1>Hello world</h1>

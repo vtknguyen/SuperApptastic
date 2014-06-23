@@ -56,9 +56,9 @@ alert('Failed because: ' + message);
 };
 
 
-function album_pic() { 
-  alert("Much Wow");
-  /*
+function album_pic() {
+alert("Much Wow");
+
     navigator.camera.getPicture(onSuccess, onFail { quality: 50,
     destinationType: Camera.DestinationType.FILE_URI
 	sourceType: Camera.PictureSource.SAVEDPHOTOALBUM	});
@@ -73,5 +73,5 @@ function onFail(message) {
     alert('Failed because: ' + message);
 }
 		
-		*/
+	
 }
