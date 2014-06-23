@@ -21,7 +21,7 @@
 var pictureSource; // picture source
 var destinationType; // sets the format of returned value
 // See the above in device.js for their assignments
-
+/*
 // api-camera
 function onPhotoDataSuccess(imageData) {
     console.log("* * * onPhotoDataSuccess");
@@ -38,12 +38,23 @@ function onPhotoURISuccess(imageURI) {
     cameraImage.style.visibility = 'visible';
     cameraImage.src = imageURI;
 }
-
+*/
 function take_pic() {
-    navigator.camera.getPicture(onPhotoDataSuccess, function(ex) {
-        alert("Camera Error!");
-    }, { quality : 30, destinationType: destinationType.DATA_URL });
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+destinationType: Camera.DestinationType.DATA_URL
+});
+ 
+function onSuccess(imageData) {
+var image = document.getElementById('cameraImage');
+image.src = "data:image/jpeg;base64," + imageData;
 }
+ 
+function onFail(message) {
+alert('Failed because: ' + message);
+}
+ 
+};
+
 
 function album_pic() {
     navigator.camera.getPicture(onPhotoURISuccess, function(ex) {
