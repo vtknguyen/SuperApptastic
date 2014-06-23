@@ -13,6 +13,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />	
 	<script>
+	
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Now safe to use device APIs
+    }
+
+
 		$(function() {
 			$( "[data-role='navbar']" ).navbar();
 			$( "[data-role='header'], [data-role='footer']" ).toolbar();
@@ -36,7 +50,8 @@
 		});
 	</script>
 </head>
-<body>
+<body onload="onLoad()">
+
     <div data-role="header" data-position="fixed" data-theme="a">
         <!--h1 style="text-align:left; margin-left:10px;">Info</h1-->
 		<div class="logo">

@@ -57,11 +57,19 @@ alert('Failed because: ' + message);
 
 
 function album_pic() {
-    navigator.camera.getPicture(onPhotoURISuccess, function(ex) {
-            alert("Camera Error!"); },
-            { quality: 30,
-        destinationType: destinationType.FILE_URI,
-        // Android Quirk: Camera.PictureSourceType.PHOTOLIBRARY and
-        // Camera.PictureSourceType.SAVEDPHOTOALBUM display the same photo album.
-        sourceType: pictureSource.SAVEDPHOTOALBUM });
+    navigator.camera.getPicture(onSuccess, onFail { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI
+	sourceType: Camera.PictureSource.SAVEDPHOTOALBUM	});
+
+		
+		function onSuccess(imageURI) {
+    var image = document.getElementById('cameraImage');
+    image.src = imageURI;
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+		
+		
 }
