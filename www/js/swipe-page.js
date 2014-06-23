@@ -26,7 +26,7 @@ $( document ).one( "pagecreate", function() {
         // Check if there is a next page and
         // swipes may also happen when the user highlights text, so ignore those.
         // We're only interested in swipes on the page.
-        if ( next && ( event.target === $( this )[ 0 ] ) ) {
+        if ( next /*&& ( event.target === $( this )[ 0 ] )*/ ) {
             navnext( next );
         }
     });
@@ -41,7 +41,7 @@ $( document ).one( "pagecreate", function() {
     // The same for the navigating to the previous page
     $( document ).on( "swiperight", ".ui-page", function( event ) {
         var prev = $( this ).jqmData( "prev" );
-        if ( prev && ( event.target === $( this )[ 0 ] ) ) {
+        if ( prev /*&& ( event.target === $( this )[ 0 ] ) */) {
             navprev( prev );
         }
     });
