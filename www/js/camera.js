@@ -39,7 +39,11 @@ function onPhotoURISuccess(imageURI) {
     cameraImage.src = imageURI;
 }
 */
-function take_pic() {
+
+
+$(function(){
+
+    $("#take_pic").click(function(){ 
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 destinationType: Camera.DestinationType.DATA_URL
 });
@@ -53,14 +57,13 @@ function onFail(message) {
 alert('Failed because: ' + message);
 }
  
-};
+});
+
+    $("#album_pic").click(function(){ 
 
 
-function album_pic() {
-alert("Much Wow");
-
-    navigator.camera.getPicture(onSuccess, onFail { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.FILE_URI,
 	sourceType: Camera.PictureSource.SAVEDPHOTOALBUM	});
 
 		
@@ -73,5 +76,6 @@ function onFail(message) {
     alert('Failed because: ' + message);
 }
 		
-	
-}
+});
+
+});
